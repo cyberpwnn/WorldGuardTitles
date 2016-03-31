@@ -45,7 +45,7 @@ public class WorldGuardTitles extends JavaPlugin implements Listener
 		{
 			if(msg.charAt(i) == '&')
 			{
-				coloredMsg += 'ง';
+				coloredMsg += 'ยง';
 			}
 			else
 			{
@@ -157,7 +157,7 @@ public class WorldGuardTitles extends JavaPlugin implements Listener
 		
 		if(subtitle != null)
 		{
-			subtitle = subtitle.replaceAll("%player%", player.getDisplayName());
+			subtitle = subtitle.replace("%player%", player.getDisplayName());
 			subtitle = ChatColor.translateAlternateColorCodes((char) '&', (String) subtitle);
 			IChatBaseComponent titleSub = IChatBaseComponent.ChatSerializer.a((String) ("{\"text\": \"" + subtitle + "\"}"));
 			PacketPlayOutTitle packetPlayOutSubTitle = new PacketPlayOutTitle(PacketPlayOutTitle.EnumTitleAction.SUBTITLE, titleSub);
@@ -166,7 +166,7 @@ public class WorldGuardTitles extends JavaPlugin implements Listener
 		
 		if(title != null)
 		{
-			title = title.replaceAll("%player%", player.getDisplayName());
+			title = title.replace("%player%", player.getDisplayName());
 			title = ChatColor.translateAlternateColorCodes((char) '&', (String) title);
 			IChatBaseComponent titleMain = IChatBaseComponent.ChatSerializer.a((String) ("{\"text\": \"" + title + "\"}"));
 			PacketPlayOutTitle packetPlayOutTitle = new PacketPlayOutTitle(PacketPlayOutTitle.EnumTitleAction.TITLE, titleMain);
